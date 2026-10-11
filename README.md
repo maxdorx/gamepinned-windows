@@ -1,8 +1,10 @@
 # GamePinned Windows
 
-Windows service and WPF app source for GamePinned, created by [sudoosama](https://sudoosama.com/). GamePinned development ended on September 19, 2026. This is the v2.0.5 development source, not a tested release. The last production version was v2.0.4.
+Windows service and WPF app source for [GamePinned](https://gamepinned.com/), created by [sudoosama](https://sudoosama.com/). This is the v2.0.5 development source, not a tested release. The last production version was v2.0.4.
 
-GamePinned was built to protect selected Steam, Epic Games, and Riot games from uninstall attempts by blocked Windows accounts. Automatic detection of every launcher update and uninstall, with the required unlock and relock, was not completed. Do not treat this source as a complete protection guarantee.
+## Why GamePinned ended
+
+GamePinned was built to protect selected Steam, Epic Games, and Riot games from uninstall attempts by blocked Windows accounts. The core blocking worked, but launcher updates and uninstalls can remove or replace the same game files. Reliably telling them apart to unlock and relock games would have required deeper monitoring or control of the user's PC. That crossed a privacy boundary I was not willing to cross, so development ended on September 19, 2026. Do not treat this source as a complete protection guarantee.
 
 ## Build
 
