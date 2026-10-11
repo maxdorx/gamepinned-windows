@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <PublishAot>false</PublishAot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- The service is an executable/self-contained AOT project, which MSBuild cannot
+         consume reliably as a ProjectReference. The runner script builds it first and
+         this regression references that exact managed output. -->
+    <Reference Include="GamePinnedService">
+      <HintPath>$(ServiceAssemblyPath)</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="GamePinned.Shared">
+      <HintPath>$(SharedAssemblyPath)</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.0" />
+    <PackageReference Include="System.IO.FileSystem.AccessControl" Version="5.0.0" />
+  </ItemGroup>
+</Project>

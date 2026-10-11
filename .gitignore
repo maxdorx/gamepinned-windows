@@ -1,0 +1,16 @@
+bin/
+obj/
+publish/
+.vs/
+*.exe
+*.dll
+*.pdb
+*.user
+*.suo
+*.log
+*.pem
+*.key
+*.pfx
+.env*
+config.json
+artifacts/

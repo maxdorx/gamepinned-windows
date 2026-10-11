@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows10.0.17763.0</TargetFramework>
+    <RootNamespace>GamePinned.GUI</RootNamespace>
+    <AssemblyName>GamePinned</AssemblyName>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+
+    <!-- Version info for update checker -->
+    <Version>2.0.5</Version>
+    <AssemblyVersion>2.0.5.0</AssemblyVersion>
+    <FileVersion>2.0.5.0</FileVersion>
+
+    <!-- Precompiles to native win-x64 code at publish time instead of JIT-ing on first run,
+         faster cold start. Requires the -r win-x64 publish documented in docs/DEPLOYMENT.md. -->
+    <PublishReadyToRun>true</PublishReadyToRun>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="logo.png" />
+    <Resource Include="Assets\steam_icon.png" />
+    <Resource Include="Assets\epic_icon.png" />
+    <Resource Include="Assets\riot_icon.png" />
+    <Resource Include="Assets\nvidia_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Material Design for beautiful UI (MaterialDesignColors pulled transitively) -->
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+
+    <!-- For service control -->
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.0" />
+  </ItemGroup>
+
+</Project>
